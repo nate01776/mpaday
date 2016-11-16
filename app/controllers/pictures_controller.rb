@@ -21,9 +21,6 @@ class PicturesController < ApplicationController
       @picture.day_number = 1
       @user.first_day = Time.now
       @user.current_streak = 1
-    elsif @user.pictures.last.created_at != (Time.now - 1.day)
-      @picture.day_number = @user.pictures.length + 1
-      @user.current_streak = 1
     else
       @picture.day_number = @user.pictures.length + 1
       @user.current_streak += 1
