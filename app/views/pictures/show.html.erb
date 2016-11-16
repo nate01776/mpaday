@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="small-12 medium-6 columns">
+    <%= image_tag @picture.image, class:"show-image"%>
+  </div>
+  <div class="small-12 medium-6 columns show-image-info">
+    upload date:<br />
+    <b><%= @picture.created_at.month %> / <%= @picture.created_at.day %></b>
+    <br /><br />
+    description:<br />
+    <b><%= @picture.description %></b>
+    <br /><br />
+    day number:<br />
+    <b><%= @picture.day_number %> / 365</b>
+    <br /><br />
+    uploaded by:<br />
+    <b><%= @picture.user.username %>  <%= link_to '', user_path(@picture.user.id), class:"fa fa-user user-profile" %></b>
+  </div>
+
+</div>

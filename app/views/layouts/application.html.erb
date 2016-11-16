@@ -5,17 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title><%= content_for?(:title) ? yield(:title) : "picture-a-day" %></title>
-    <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Knewave|Numans" rel="stylesheet">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet">
+    <script src="https://use.fontawesome.com/4d47250886.js"></script>
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
 
   <body>
-    <div class="page-header">
-      <h1>PICTURE-A-DAY</h1>
+    <div class="row page-header">
+      <div class="small-12 medium-6 columns page-title">
+        <h1><%= link_to "PICTURE-A-DAY", root_path %></h1>
+      </div>
+      <% if current_user != nil %>
+        <div class="small-12 medium-6 columns page-links">
+          <% if current_user.pictures == [] %>
+            <%= link_to '', new_picture_path, class:"top-links fa fa-plus add-picture" %>
+          <% elsif current_user.pictures.last.created_at.day == Time.now.day && current_user.pictures.last.created_at.month == Time.now.month %>
+            <%= link_to '', picture_path(current_user.pictures.last), class:"top-links fa fa-check add-picture" %>
+          <% else %>
+            <%= link_to '', new_picture_path, class:"top-links fa fa-plus add-picture" %>
+          <% end %>
+          <%= link_to '', pictures_path, class:"top-links fa fa-th" %>
+          <%= link_to '', user_path(current_user.id), class:"top-links fa fa-user user-profile" %>
+          <%= link_to '', destroy_user_session_path, method: :delete, class:"top-links sign-out fa fa-times" %>
+        </div>
+      <% else %>
+        <div class="small-12 medium-4 columns page-links">
+          <%= link_to 'LOG IN', new_user_session_path, class:"top-links" %>
+          <%= link_to 'SIGN UP', new_user_registration_path, class:"top-links" %>
+        </div>
+      <% end %>
     </div>
-    <div class="small-12 columns">
+    <div class="row">
       <%= yield %>
     </div>
   </body>
