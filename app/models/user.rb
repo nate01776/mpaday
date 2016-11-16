@@ -5,4 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :pictures
+
+  def username
+    work = self.email.split("@")
+    work[0]
+  end
 end

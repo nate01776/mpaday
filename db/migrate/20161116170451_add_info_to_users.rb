@@ -1,7 +1,7 @@
 class AddInfoToUsers < ActiveRecord::Migration[5.0]
   def up
-    add_column :users, :first_day, :string, null: false
-    add_column :users, :current_streak, :integer, null: false
+    add_column :users, :first_day, :string
+    add_column :users, :current_streak, :integer
   end
 
   def down

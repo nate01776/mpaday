@@ -17,7 +17,7 @@
  */
  .page-header {
    text-align: left;
-   background-color: black;
+   background-color: #262626;
    color: white;
    font-weight: bold;
    padding-left: 10px;
@@ -30,10 +30,14 @@
  }
 
  .page-header h1 a:hover {
-   color: lightgrey;
+   color: #f2f2f2;
    font-family: 'Knewave', cursive;
    transition: color 0.2s, ease;
  }
+
+.page-links {
+  text-align: right;
+}
 
 .user-info {
   text-align: center;
@@ -46,6 +50,23 @@
 
 .user-info hr {
   margin: 0;
+}
+
+.session-info {
+  text-align: center;
+  padding: 30px;
+}
+
+.session-info a {
+  font-size: 20px;
+  color: black;
+  transition: color 0.2s, ease;
+}
+
+.session-info a:hover {
+  font-size: 20px;
+  color: #8c8c8c;
+  transition: color 0.2s, ease;
 }
 
 .button {
@@ -63,5 +84,62 @@
   transition: box-shadow 0.2s, ease;
 }
 
-.input-container {
+.top-links {
+  background-color: white;
+  font-size: 14px;
+  color: black;
+  margin: 10px;
+  margin-top: 0;
+  padding: 10px;
+}
+
+.top-links:hover {
+  background-color: #f2f2f2;
+  color: black;
+  transition: background-color 0.2s, ease;
+  transition: color 0.2s, ease;
+}
+
+.user-profile {
+  color: #0074D9;
+}
+
+.sign-out {
+  color: #FF4136;
+}
+
+.add-picture {
+  color: #2ECC40;
+}
+
+.image-info {
+  text-align: center;
+  background-color: #f2f2f2;
+  padding-top: 5px;
+}
+
+.image-info a {
+  color: black;
+}
+
+.index-image {
+  height: 150px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 20px;
+}
+
+#error_explanation {
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+
+#error_explanation h2 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#error_explanation li {
+  list-style: none;
 }
