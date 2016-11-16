@@ -16,10 +16,23 @@
 
  */
  .page-header {
-   text-align: center;
+   text-align: left;
    background-color: black;
    color: white;
    font-weight: bold;
+   padding-left: 10px;
+ }
+
+ .page-header h1 a {
+   color: white;
+   font-family: 'Knewave', cursive;
+   transition: color 0.2s, ease;
+ }
+
+ .page-header h1 a:hover {
+   color: lightgrey;
+   font-family: 'Knewave', cursive;
+   transition: color 0.2s, ease;
  }
 
 .user-info {
