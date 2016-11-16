@@ -1,7 +1,7 @@
 <div class="row">
   <% @pictures.each_with_index do |picture, index| %>
     <a href="/pictures/<%=picture.id %>">
-      <div class="small-12 medium-4 large-2 columns">
+      <div class="small-12 medium-4 large-2 columns end">
         <div class="index-image" style="background-image: url(<%= picture.image %>)">
         </div>
         </a>
