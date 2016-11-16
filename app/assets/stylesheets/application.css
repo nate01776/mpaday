@@ -130,6 +130,14 @@
   margin-top: 20px;
 }
 
+.show-image {
+  margin-top: 20px;
+}
+.show-image-info {
+  padding: 50px;
+  text-align: right;
+}
+
 #error_explanation {
   background-color: #f2f2f2;
   padding: 10px;
