@@ -30,6 +30,7 @@ class PicturesController < ApplicationController
     end
 
     if @picture.save
+      @picture.created_at = Time.now()
       @user.save
       redirect_to picture_path(@picture.id)
     end
