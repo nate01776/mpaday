@@ -22,7 +22,7 @@
         <div class="small-12 medium-6 columns page-links">
           <% if current_user.pictures == [] %>
             <%= link_to '', new_picture_path, class:"top-links fa fa-plus add-picture" %>
-          <% elsif current_user.pictures.last.created_at.day == Time.now.day && current_user.pictures.last.created_at.month == Time.now.month %>
+          <% elsif current_user.pictures.last.created_at.day == (Time.now - 5.hours).day && current_user.pictures.last.created_at.month == Time.now.month %>
             <%= link_to '', picture_path(current_user.pictures.last), class:"top-links fa fa-check add-picture" %>
           <% else %>
             <%= link_to '', new_picture_path, class:"top-links fa fa-plus add-picture" %>
